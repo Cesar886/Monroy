@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monroy & Asociados Bufete Jurídico | Ciudad de México</title>
+  <meta name="description" content="Monroy & Asociados Bufete Jurídico — Despacho de abogados en Cuajimalpa, CDMX. Derecho familiar, civil, laboral, penal y asesoría empresarial. Llámanos: 55 7911 1940." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & Variables ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0C1628;
+      --navy-light: #162240;
+      --gold:   #c9a84c;
+      --gold-light: #e0bf6e;
+      --gold-pale: #f7f0dc;
+      --white:  #ffffff;
+      --bg:     #f8f7f4;
+      --text:   #0f172a;
+      --muted:  #475569;
+      --border: #e2e0d9;
+      --radius: 8px;
+      --shadow: 0 4px 24px rgba(12,22,40,.12);
+      --shadow-lg: 0 12px 48px rgba(12,22,40,.20);
+      --transition: 200ms ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'EB Garamond', serif;
+      line-height: 1.2;
+      color: var(--navy);
+    }
+
+    img { display: block; max-width: 100%; }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Utility ─────────────────────────────────────────────────────── */
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin-inline: auto;
+      padding-inline: 1.25rem;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-family: 'Lato', sans-serif;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .75rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 600px;
+    }
+
+    .gold-line {
+      width: 52px;
+      height: 3px;
+      background: var(--gold);
+      margin-bottom: 2rem;
+      border-radius: 2px;
+    }
+
+    /* ── Nav ─────────────────────────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 50;
+      background: rgba(12,22,40,.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,.2);
+      transition: box-shadow var(--transition);
+    }
+
+    .nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.25); }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 1rem;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    .nav-brand-icon {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+    }
+
+    .nav-brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .nav-brand-name {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--white);
+      white-space: nowrap;
+    }
+
+    .nav-brand-sub {
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: .875rem;
+      font-weight: 400;
+      color: rgba(255,255,255,.80);
+      transition: color var(--transition);
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--gold);
+      color: var(--navy) !important;
+      font-weight: 700;
+      font-size: .82rem;
+      padding: .55rem 1.1rem;
+      border-radius: var(--radius);
+      transition: background var(--transition), transform var(--transition);
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: .4rem;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 200ms ease;
+    }
+
+    @media (max-width: 767px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 68px 0 0 0;
+      z-index: 49;
+      background: var(--navy);
+      padding: 2rem 1.25rem;
+      flex-direction: column;
+      gap: 1.5rem;
+      transform: translateX(100%);
+      transition: transform 280ms ease;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+      transform: translateX(0);
+    }
+
+    .mobile-menu a {
+      color: rgba(255,255,255,.85);
+      font-size: 1.1rem;
+      font-weight: 400;
+      padding: .5rem 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      transition: color var(--transition);
+    }
+
+    .mobile-menu a:hover { color: var(--gold); }
+
+    .mobile-menu .nav-cta {
+      margin-top: .5rem;
+      justify-content: center;
+      padding: .75rem 1rem;
+      font-size: .9rem;
+    }
+
+    /* ── Hero ────────────────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--navy);
+      overflow: hidden;
+      padding-top: 68px;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(201,168,76,.08) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 20% 80%, rgba(201,168,76,.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: rgba(201,168,76,.12);
+      border: 1px solid rgba(201,168,76,.3);
+      color: var(--gold);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .4rem .9rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badge svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    .hero h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(2.4rem, 7vw, 4rem);
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 1.25rem;
+      line-height: 1.1;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-desc {
+      color: rgba(255,255,255,.75);
+      font-size: 1.1rem;
+      margin-bottom: 2.25rem;
+      max-width: 540px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: .95rem;
+      padding: .9rem 1.75rem;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(201,168,76,.35);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: transparent;
+      color: var(--white);
+      font-weight: 700;
+      font-size: .95rem;
+      padding: .9rem 1.75rem;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.25);
+      cursor: pointer;
+      transition: border-color var(--transition), background var(--transition);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--gold);
+      background: rgba(201,168,76,.08);
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .hero-stat {}
+
+    .hero-stat-number {
+      font-family: 'EB Garamond', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .hero-stat-label {
+      font-size: .78rem;
+      color: rgba(255,255,255,.55);
+      margin-top: .2rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .hero-star-row {
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      margin-top: .3rem;
+    }
+
+    .hero-star-row svg { color: var(--gold); width: 15px; height: 15px; }
+
+    /* ── Sección genérica ────────────────────────────────────────────── */
+    .section { padding: 5rem 0; }
+    .section-alt { background: var(--white); }
+    .section-dark { background: var(--navy); }
+
+    .section-header { margin-bottom: 3rem; }
+    .section-header-center { text-align: center; }
+    .section-header-center .section-subtitle { margin-inline: auto; }
+    .section-header-center .gold-line { margin-inline: auto; }
+
+    /* ── Servicios ───────────────────────────────────────────────────── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
+      cursor: default;
+    }
+
+    .service-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+      border-color: var(--gold);
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--gold-pale);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .service-icon svg { color: var(--navy); width: 26px; height: 26px; }
+
+    .service-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: .6rem;
+    }
+
+    .service-card p {
+      font-size: .9rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── Por qué elegirnos ───────────────────────────────────────────── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+
+    .why-card {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .why-icon {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: rgba(201,168,76,.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: .2rem;
+    }
+
+    .why-icon svg { color: var(--gold); width: 22px; height: 22px; }
+
+    .why-card h3 {
+      color: var(--white);
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: .4rem;
+    }
+
+    .why-card p { color: rgba(255,255,255,.60); font-size: .9rem; line-height: 1.6; }
+
+    /* ── Reseñas ─────────────────────────────────────────────────────── */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .review-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      position: relative;
+      transition: box-shadow var(--transition);
+    }
+
+    .review-card:hover { box-shadow: var(--shadow); }
+
+    .review-quote {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.5rem;
+      color: var(--gold-pale);
+    }
+
+    .review-quote svg { width: 40px; height: 40px; }
+
+    .review-stars {
+      display: flex;
+      gap: .2rem;
+      margin-bottom: 1rem;
+    }
+
+    .review-stars svg { width: 18px; height: 18px; color: var(--gold); }
+
+    .review-text {
+      font-style: italic;
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    .review-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .review-avatar svg { width: 22px; height: 22px; color: var(--gold); }
+
+    .review-name { font-weight: 700; font-size: .9rem; color: var(--navy); }
+    .review-role { font-size: .78rem; color: var(--muted); }
+
+    .google-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: .45rem 1rem;
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-top: 2.5rem;
+    }
+
+    .google-badge svg { width: 18px; height: 18px; }
+
+    .google-badge .stars-inline { display: flex; gap: .15rem; }
+    .google-badge .stars-inline svg { width: 14px; height: 14px; color: #f59e0b; }
+
+    /* ── Ubicación ───────────────────────────────────────────────────── */
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    @media (max-width: 767px) {
+      .location-grid { grid-template-columns: 1fr; }
+    }
+
+    .location-info { }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: .875rem;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-item:last-child { border-bottom: none; }
+
+    .contact-item-icon {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: var(--gold-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-item-icon svg { width: 20px; height: 20px; color: var(--navy); }
+
+    .contact-item-text { }
+    .contact-item-label { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+    .contact-item-value { font-size: .97rem; color: var(--text); margin-top: .15rem; line-height: 1.5; }
+    .contact-item-value a { color: var(--navy); transition: color var(--transition); }
+    .contact-item-value a:hover { color: var(--gold); }
+
+    .map-wrapper {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      aspect-ratio: 4/3;
+    }
+
+    .map-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: none;
+    }
+
+    /* ── Floating WhatsApp ───────────────────────────────────────────── */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 1.75rem;
+      right: 1.75rem;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: .65rem;
+      background: #25d366;
+      color: var(--white);
+      font-weight: 700;
+      font-size: .85rem;
+      padding: .7rem 1.1rem .7rem .75rem;
+      border-radius: 100px;
+      box-shadow: 0 6px 28px rgba(37,211,102,.45);
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition);
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 36px rgba(37,211,102,.55);
+    }
+
+    .whatsapp-float svg { width: 26px; height: 26px; flex-shrink: 0; }
+
+    .whatsapp-float-label { display: none; }
+
+    @media (min-width: 480px) {
+      .whatsapp-float-label { display: inline; }
+    }
+
+    /* ── Footer ──────────────────────────────────────────────────────── */
+    .footer {
+      background: #070e1c;
+      padding: 3rem 0 1.5rem;
+      color: rgba(255,255,255,.65);
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 767px) {
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    .footer-brand-name {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: .35rem;
+    }
+
+    .footer-brand-sub {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .75rem;
+    }
+
+    .footer-brand-desc { font-size: .85rem; line-height: 1.7; }
+
+    .footer-col-title {
+      color: var(--white);
+      font-weight: 700;
+      font-size: .8rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+    .footer-links a { font-size: .88rem; color: rgba(255,255,255,.55); transition: color var(--transition); }
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-contact-item { display: flex; gap: .6rem; font-size: .88rem; margin-bottom: .65rem; }
+    .footer-contact-item svg { width: 16px; height: 16px; color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .75rem;
+      font-size: .78rem;
+      color: rgba(255,255,255,.35);
+    }
+
+    /* ── Animations ──────────────────────────────────────────────────── */
+    @media (prefers-reduced-motion: no-preference) {
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 500ms ease, transform 500ms ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .fade-in-delay-1 { transition-delay: 100ms; }
+      .fade-in-delay-2 { transition-delay: 200ms; }
+      .fade-in-delay-3 { transition-delay: 300ms; }
+      .fade-in-delay-4 { transition-delay: 400ms; }
+    }
+
+    /* ── Accessibility ───────────────────────────────────────────────── */
+    :focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* ── Scroll to top ───────────────────────────────────────────────── */
+    .back-top {
+      position: fixed;
+      bottom: 1.75rem;
+      left: 1.75rem;
+      z-index: 99;
+      width: 44px;
+      height: 44px;
+      background: var(--navy);
+      border: 1px solid rgba(201,168,76,.4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition), transform var(--transition);
+    }
+
+    .back-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .back-top:hover { transform: translateY(-2px); }
+    .back-top svg { width: 18px; height: 18px; color: var(--gold); }
+
+    /* divider */
+    .divider-gold {
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      border: none;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav ──────────────────────────────────────────────────────────── -->
+  <header class="nav" id="nav" role="banner">
+    <div class="container nav-inner">
+
+      <a href="#inicio" class="nav-brand" aria-label="Monroy & Asociados — Inicio">
+        <svg class="nav-brand-icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <rect width="36" height="36" rx="8" fill="#c9a84c" fill-opacity=".15"/>
+          <path d="M10 26V14l8-6 8 6v12" stroke="#c9a84c" stroke-width="1.8" stroke-linejoin="round"/>
+          <rect x="14" y="19" width="8" height="7" rx="1" stroke="#c9a84c" stroke-width="1.6"/>
+          <path d="M18 8v6" stroke="#c9a84c" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <div class="nav-brand-text">
+          <span class="nav-brand-name">Monroy &amp; Asociados</span>
+          <span class="nav-brand-sub">Bufete Jurídico</span>
+        </div>
+      </a>
+
+      <nav aria-label="Navegación principal">
+        <ul class="nav-links">
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#resenas">Reseñas</a></li>
+          <li><a href="#ubicacion">Contacto</a></li>
+          <li>
+            <a href="https://wa.me/5257911940" target="_blank" rel="noopener noreferrer" class="nav-cta" aria-label="Agendar consulta por WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.527 5.845L.057 23.93l6.239-1.437A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.785 9.785 0 01-4.99-1.369l-.356-.213-3.705.853.883-3.596-.234-.37A9.79 9.79 0 012.182 12c0-5.423 4.395-9.818 9.818-9.818s9.818 4.395 9.818 9.818-4.395 9.818-9.818 9.818z"/></svg>
+              Consulta
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menú móvil">
+    <a href="#servicios" class="mobile-link">Servicios</a>
+    <a href="#nosotros" class="mobile-link">Nosotros</a>
+    <a href="#resenas" class="mobile-link">Reseñas</a>
+    <a href="#ubicacion" class="mobile-link">Contacto</a>
+    <a href="https://wa.me/5257911940" target="_blank" rel="noopener noreferrer" class="nav-cta">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.527 5.845L.057 23.93l6.239-1.437A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.785 9.785 0 01-4.99-1.369l-.356-.213-3.705.853.883-3.596-.234-.37A9.79 9.79 0 012.182 12c0-5.423 4.395-9.818 9.818-9.818s9.818 4.395 9.818 9.818-4.395 9.818-9.818 9.818z"/></svg>
+      Agendar Consulta por WhatsApp
+    </a>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ── Hero ───────────────────────────────────────────────────────── -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero-content">
+
+          <div class="hero-badge fade-in">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            Bufete Jurídico en Ciudad de México
+          </div>
+
+          <h1 id="hero-title" class="fade-in fade-in-delay-1">
+            Monroy <em>&amp;</em> Asociados
+          </h1>
+
+          <p class="hero-desc fade-in fade-in-delay-2">
+            Asesoría legal confiable, profesional y personalizada. Defendemos sus derechos con experiencia, ética y compromiso. <strong style="color:rgba(255,255,255,.9)">Su tranquilidad es nuestro resultado.</strong>
+          </p>
+
+          <div class="hero-actions fade-in fade-in-delay-3">
+            <a href="https://wa.me/5257911940" target="_blank" rel="noopener noreferrer" class="btn-primary" aria-label="Agendar consulta gratuita por WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.527 5.845L.057 23.93l6.239-1.437A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.785 9.785 0 01-4.99-1.369l-.356-.213-3.705.853.883-3.596-.234-.37A9.79 9.79 0 012.182 12c0-5.423 4.395-9.818 9.818-9.818s9.818 4.395 9.818 9.818-4.395 9.818-9.818 9.818z"/></svg>
+              Agendar Consulta Gratis
+            </a>
+            <a href="tel:5557911940" class="btn-secondary" aria-label="Llamar al despacho">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              55 7911 1940
+            </a>
+          </div>
+
+          <div class="hero-stats fade-in fade-in-delay-4">
+            <div class="hero-stat">
+              <div class="hero-stat-number">5.0</div>
+              <div class="hero-star-row" aria-label="5 estrellas en Google">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <div class="hero-stat-label">Google Reviews</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-number">+15</div>
+              <div class="hero-stat-label">Años de experiencia</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-number">5</div>
+              <div class="hero-stat-label">Áreas jurídicas</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider-gold" aria-hidden="true" />
+
+    <!-- ── Servicios ─────────────────────────────────────────────────── -->
+    <section class="section" id="servicios" aria-labelledby="servicios-title">
+      <div class="container">
+
+        <div class="section-header section-header-center">
+          <span class="section-label">Áreas de Práctica</span>
+          <h2 class="section-title" id="servicios-title">Nuestros Servicios Jurídicos</h2>
+          <div class="gold-line" aria-hidden="true"></div>
+          <p class="section-subtitle">
+            Contamos con especialistas en las principales ramas del derecho para brindarle la asesoría integral que usted y su familia necesitan.
+          </p>
+        </div>
+
+        <div class="services-grid">
+
+          <!-- Derecho Familiar -->
+          <article class="service-card fade-in">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <h3>Derecho Familiar</h3>
+            <p>Divorcios, custodia de menores, pensión alimenticia, adopciones y sucesiones. Protegemos los derechos de su familia con empatía y eficacia.</p>
+          </article>
+
+          <!-- Derecho Civil -->
+          <article class="service-card fade-in fade-in-delay-1">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <h3>Derecho Civil</h3>
+            <p>Contratos, responsabilidad civil, bienes inmuebles, arrendamientos y reclamaciones patrimoniales. Defensa sólida de sus derechos civiles.</p>
+          </article>
+
+          <!-- Derecho Laboral -->
+          <article class="service-card fade-in fade-in-delay-2">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+            </div>
+            <h3>Derecho Laboral</h3>
+            <p>Despidos injustificados, liquidaciones, demandas ante el IMSS y conflictos individuales o colectivos. Recupere lo que le corresponde.</p>
+          </article>
+
+          <!-- Derecho Penal -->
+          <article class="service-card fade-in fade-in-delay-3">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Derecho Penal</h3>
+            <p>Defensa penal en todas las etapas del proceso, querellas, amparos y representación a víctimas. Garantizamos su presunción de inocencia.</p>
+          </article>
+
+          <!-- Asesoría Empresarial -->
+          <article class="service-card fade-in fade-in-delay-4">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            </div>
+            <h3>Asesoría Empresarial</h3>
+            <p>Constitución de sociedades, contratos mercantiles, due diligence, fusiones y protección de marca. Blindamos su empresa jurídicamente.</p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Por qué elegirnos ──────────────────────────────────────────── -->
+    <section class="section section-dark" id="nosotros" aria-labelledby="nosotros-title">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-label">¿Por qué nosotros?</span>
+          <h2 class="section-title" id="nosotros-title" style="color:var(--white)">Comprometidos con su Tranquilidad</h2>
+          <div class="gold-line" aria-hidden="true"></div>
+          <p class="section-subtitle" style="color:rgba(255,255,255,.65)">
+            En Monroy &amp; Asociados cada caso es único y lo tratamos con la seriedad y dedicación que usted merece.
+          </p>
+        </div>
+
+        <div class="why-grid">
+
+          <div class="why-card fade-in">
+            <div class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div>
+              <h3>Profesionalismo</h3>
+              <p>Nuestro equipo cuenta con cédula profesional, especialización y capacitación continua para ofrecerle el más alto estándar de práctica jurídica.</p>
+            </div>
+          </div>
+
+          <div class="why-card fade-in fade-in-delay-1">
+            <div class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <h3>Más de 15 años de experiencia</h3>
+              <p>Décadas de litigio y asesoría nos respaldan. Conocemos los juzgados, los procedimientos y las estrategias que realmente funcionan en CDMX.</p>
+            </div>
+          </div>
+
+          <div class="why-card fade-in fade-in-delay-2">
+            <div class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div>
+              <h3>Atención personalizada</h3>
+              <p>No somos un despacho masivo. Cada cliente tiene acceso directo a su abogado asignado, con seguimiento puntual y comunicación clara en todo momento.</p>
+            </div>
+          </div>
+
+          <div class="why-card fade-in fade-in-delay-3">
+            <div class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <div>
+              <h3>Resultados comprobables</h3>
+              <p>Nuestros clientes nos avalan con una calificación perfecta de 5.0 estrellas en Google. Actuamos con transparencia y orientados a obtener los mejores resultados.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Reseñas ────────────────────────────────────────────────────── -->
+    <section class="section section-alt" id="resenas" aria-labelledby="resenas-title">
+      <div class="container">
+
+        <div class="section-header section-header-center">
+          <span class="section-label">Testimonios</span>
+          <h2 class="section-title" id="resenas-title">Lo que dicen nuestros clientes</h2>
+          <div class="gold-line" aria-hidden="true"></div>
+        </div>
+
+        <div class="reviews-grid">
+
+          <article class="review-card fade-in" aria-label="Reseña de cliente">
+            <div class="review-quote" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+            </div>
+            <div class="review-stars" aria-label="5 de 5 estrellas">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="review-text">"Contraté al despacho Monroy &amp; Asociados para un proceso de divorcio muy complicado. Desde el primer día me explicaron todo con claridad, se mantuvieron disponibles y obtuvimos un resultado muy favorable. Sin duda los recomiendo ampliamente. Excelente servicio y trato muy humano."</p>
+            <div class="review-author">
+              <div class="review-avatar" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <div>
+                <div class="review-name">María G.</div>
+                <div class="review-role">Clienta — Derecho Familiar</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card fade-in fade-in-delay-1" aria-label="Reseña de cliente">
+            <div class="review-quote" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+            </div>
+            <div class="review-stars" aria-label="5 de 5 estrellas">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="review-text">"Acudí al despacho por un conflicto laboral con mi empresa anterior. El Lic. Monroy fue muy directo y estratégico. Lograron una liquidación completa más una indemnización adicional en tiempo récord. Profesionales, honestos y muy eficientes. ¡Totalmente recomendables!"</p>
+            <div class="review-author">
+              <div class="review-avatar" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <div>
+                <div class="review-name">Roberto S.</div>
+                <div class="review-role">Cliente — Derecho Laboral</div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div style="text-align:center;">
+          <div class="google-badge fade-in" aria-label="Calificación de 5.0 en Google">
+            <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+            </svg>
+            <span>Google Reviews</span>
+            <div class="stars-inline" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <strong style="color:var(--navy)">5.0</strong>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Ubicación ─────────────────────────────────────────────────── -->
+    <section class="section" id="ubicacion" aria-labelledby="ubicacion-title">
+      <div class="container">
+
+        <div class="section-header">
+          <span class="section-label">Visítenos</span>
+          <h2 class="section-title" id="ubicacion-title">Ubicación y Contacto</h2>
+          <div class="gold-line" aria-hidden="true"></div>
+          <p class="section-subtitle">Estamos en Cuajimalpa, Ciudad de México. Venga a vernos o contáctenos directamente.</p>
+        </div>
+
+        <div class="location-grid">
+
+          <div class="location-info fade-in">
+
+            <div class="contact-item">
+              <div class="contact-item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="contact-item-text">
+                <div class="contact-item-label">Dirección</div>
+                <div class="contact-item-value">
+                  Av. José María Castorena 181<br>
+                  Cuajimalpa, Ciudad de México<br>
+                  CP 05030
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div class="contact-item-text">
+                <div class="contact-item-label">Teléfono</div>
+                <div class="contact-item-value">
+                  <a href="tel:5557911940">55 7911 1940</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div class="contact-item-text">
+                <div class="contact-item-label">Horario de atención</div>
+                <div class="contact-item-value">
+                  Lunes a viernes<br>
+                  9:00 am – 6:00 pm
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.527 5.845L.057 23.93l6.239-1.437A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.785 9.785 0 01-4.99-1.369l-.356-.213-3.705.853.883-3.596-.234-.37A9.79 9.79 0 012.182 12c0-5.423 4.395-9.818 9.818-9.818s9.818 4.395 9.818 9.818-4.395 9.818-9.818 9.818z"/></svg>
+              </div>
+              <div class="contact-item-text">
+                <div class="contact-item-label">WhatsApp</div>
+                <div class="contact-item-value">
+                  <a href="https://wa.me/5257911940" target="_blank" rel="noopener noreferrer">Enviar mensaje ahora</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="map-wrapper fade-in fade-in-delay-1">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.487!2d-99.28!3d19.36!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d21e5c13e2e68b%3A0x0!2sAv.+Jos%C3%A9+Mar%C3%ADa+Castorena+181%2C+Cuajimalpa+de+Morelos%2C+05030+Ciudad+de+M%C3%A9xico%2C+CDMX!5e0!3m2!1ses!2smx!4v1"
+              title="Ubicación de Monroy &amp; Asociados en Google Maps"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Floating WhatsApp ──────────────────────────────────────────── -->
+  <a
+    href="https://wa.me/5257911940"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp"
+  >
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.527 5.845L.057 23.93l6.239-1.437A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.785 9.785 0 01-4.99-1.369l-.356-.213-3.705.853.883-3.596-.234-.37A9.79 9.79 0 012.182 12c0-5.423 4.395-9.818 9.818-9.818s9.818 4.395 9.818 9.818-4.395 9.818-9.818 9.818z"/>
+    </svg>
+    <span class="whatsapp-float-label">WhatsApp</span>
+  </a>
+
+  <!-- Scroll to top -->
+  <button class="back-top" id="backTop" aria-label="Volver arriba">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- ── Footer ─────────────────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+
+        <div>
+          <div class="footer-brand-name">Monroy &amp; Asociados</div>
+          <div class="footer-brand-sub">Bufete Jurídico</div>
+          <p class="footer-brand-desc">
+            Despacho de abogados ubicado en Cuajimalpa, CDMX. Brindamos asesoría jurídica integral con ética, profesionalismo y compromiso con nuestros clientes.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Servicios</div>
+          <ul class="footer-links">
+            <li><a href="#servicios">Derecho Familiar</a></li>
+            <li><a href="#servicios">Derecho Civil</a></li>
+            <li><a href="#servicios">Derecho Laboral</a></li>
+            <li><a href="#servicios">Derecho Penal</a></li>
+            <li><a href="#servicios">Asesoría Empresarial</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Contacto</div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Av. José María Castorena 181, Cuajimalpa, CDMX, CP 05030</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            <a href="tel:5557911940" style="color:rgba(255,255,255,.65);">55 7911 1940</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Lun–Vie: 9:00 am – 6:00 pm</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.116 1.527 5.845L.057 23.93l6.239-1.437A11.938 11.938 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.785 9.785 0 01-4.99-1.369l-.356-.213-3.705.853.883-3.596-.234-.37A9.79 9.79 0 012.182 12c0-5.423 4.395-9.818 9.818-9.818s9.818 4.395 9.818 9.818-4.395 9.818-9.818 9.818z"/></svg>
+            <a href="https://wa.me/5257911940" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,.65);">wa.me/5257911940</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2024 Monroy &amp; Asociados Bufete Jurídico. Todos los derechos reservados.</span>
+        <span>Cuajimalpa de Morelos, Ciudad de México</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── Nav scroll effect ──────────────────────────────────────────────
+    const nav = document.getElementById('nav');
+    const backTop = document.getElementById('backTop');
+
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 20);
+      backTop.classList.toggle('visible', y > 400);
+    }, { passive: true });
+
+    backTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ── Mobile menu ────────────────────────────────────────────────────
+    const toggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let menuOpen = false;
+
+    toggle.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileMenu.classList.toggle('open', menuOpen);
+      toggle.setAttribute('aria-expanded', menuOpen.toString());
+      document.body.style.overflow = menuOpen ? 'hidden' : '';
+    });
+
+    // Close on link click
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        menuOpen = false;
+        mobileMenu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (menuOpen && !mobileMenu.contains(e.target) && !toggle.contains(e.target)) {
+        menuOpen = false;
+        mobileMenu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // ── Scroll animations ──────────────────────────────────────────────
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!prefersReduced) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    } else {
+      // Respect prefers-reduced-motion: show all immediately
+      document.querySelectorAll('.fade-in').forEach(el => {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      });
+    }
+
+    // ── Hero stat counter animation ────────────────────────────────────
+    if (!prefersReduced) {
+      const statEls = document.querySelectorAll('.hero-stat-number');
+      const statObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseFloat(el.textContent.replace(/[^0-9.]/g, ''));
+            const isFloat = el.textContent.includes('.');
+            const prefix = el.textContent.startsWith('+') ? '+' : '';
+            let start = 0;
+            const duration = 1200;
+            const step = (timestamp) => {
+              if (!start) start = timestamp;
+              const progress = Math.min((timestamp - start) / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              const current = eased * target;
+              el.textContent = prefix + (isFloat ? current.toFixed(1) : Math.floor(current));
+              if (progress < 1) requestAnimationFrame(step);
+            };
+            requestAnimationFrame(step);
+            statObserver.unobserve(el);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      statEls.forEach(el => statObserver.observe(el));
+    }
+  </script>
+
+</body>
+</html>
